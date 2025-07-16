@@ -1,0 +1,272 @@
+/* Reset and Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff;
+  color: #000;
+  background-image: radial-gradient(#ccc 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-attachment: fixed;
+}
+
+/* Ensure all text and links are black */
+h1, h2, h3, h4, h5, h6,
+p, ul, li, a, span, label, input, textarea, button {
+  color: #000 !important;
+}
+
+/* Header (Locked) */
+header {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 10px 30px;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #000 !important;
+}
+
+/* Hero Section with Slider (Locked) */
+.hero {
+  width: 100%;
+  height: 100vh;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 30px;
+  background: white;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider {
+  display: flex;
+  width: 300%;
+  height: 100%;
+  transition: transform 1s ease-in-out;
+}
+
+.slide {
+  flex: 0 0 100%;
+  height: 100%;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 30px;
+  display: block;
+}
+
+/* Slider navigation buttons */
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 28px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  padding: 10px 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.3s ease;
+}
+
+.nav:hover {
+  background: #ddd;
+}
+
+.nav.prev {
+  left: 15px;
+}
+
+.nav.next {
+  right: 15px;
+}
+
+/* Sections */
+section {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+/* Products Section (Locked) */
+.products-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.product-card {
+  width: 280px;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  background: white;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0;
+}
+
+.product-card h3 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+}
+
+/* Contact Form */
+.contact-form input,
+.contact-form textarea {
+  width: 90%;
+  max-width: 400px;
+  padding: 10px;
+  margin: 10px auto;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  display: block;
+  font-size: 16px;
+  color: #000;
+}
+
+.contact-form button {
+  background: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  background: #f1f1f1;
+  color: #333;
+  text-align: center;
+  padding: 20px;
+}
+
+/* ✅ Updated Process Section */
+.process-section {
+  padding: 50px 40px;
+  text-align: center;
+}
+
+.process-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  margin-top: 30px;
+}
+
+.process-text {
+  flex: 1;
+  min-width: 300px;
+  text-align: left;
+  padding-right: 20px;
+}
+
+.process-text ul {
+  list-style: none;
+  padding-left: 20px;
+}
+
+.process-text li {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.process-video {
+  flex: 1;
+  min-width: 320px;
+  max-width: 600px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  transform: perspective(1000px) rotateY(-2deg) rotateX(2deg);
+}
+
+.process-video video {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  display: block;
+}
+
+/* Remove underlines from product links */
+.product-card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Scroll-triggered fade-in and fade-out */
+.fade-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

@@ -1,0 +1,109 @@
+/* Reset and Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff;
+  color: #000;
+  background-image: radial-gradient(#ccc 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-attachment: fixed;
+}
+
+/* Header (Same as index) */
+header {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 10px 30px;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+
+/* Milk Section */
+.milk-types {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.milk-types h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.milk-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.milk-card {
+  width: 280px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.milk-card:hover {
+  transform: scale(1.05);
+}
+
+.milk-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0;
+}
+
+.milk-card h3 {
+  margin: 10px 0 5px;
+  font-size: 1.2rem;
+}
+
+.milk-card p {
+  padding: 0 15px 15px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Footer */
+footer {
+  background: #f1f1f1;
+  color: #333;
+  text-align: center;
+  padding: 20px;
+}

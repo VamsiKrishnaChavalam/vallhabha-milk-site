@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vallhabha Milk Products</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <header>
+    <nav class="header-nav">
+      <a href="{{ url_for('home') }}">
+        <img src="{{ url_for('static', filename='images/logo.jpg') }}" class="logo" alt="Logo">
+      </a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#quality">Quality</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero fade-section">
+    <div class="slider-container">
+      <div class="slider" id="slider">
+        <div class="slide"><img src="{{ url_for('static', filename='images/slider1.jpg') }}" alt="Slide 1"></div>
+        <div class="slide"><img src="{{ url_for('static', filename='images/slider2.jpg') }}" alt="Slide 2"></div>
+        <div class="slide"><img src="{{ url_for('static', filename='images/slider3.jpg') }}" alt="Slide 3"></div>
+      </div>
+      <button class="nav prev" onclick="prevSlide()">‹</button>
+      <button class="nav next" onclick="nextSlide()">›</button>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section id="products" class="fade-section">
+    <h2>Our Products</h2>
+    <div class="products-grid">
+      {% for product in ['milk', 'curd', 'ghee', 'paneer', 'sweets', 'snacks'] %}
+      <div class="product-card">
+        <a href="{{ url_for(product) }}">
+          <img src="{{ url_for('static', filename='images/' + product + '.jpg') }}" alt="{{ product|capitalize }}">
+          <h3>{{ product|capitalize }}</h3>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section id="process" class="process-section fade-section">
+    <h2>Our Process</h2>
+    <div class="process-container">
+      <div class="process-text">
+        <ul>
+          <li><strong>Step 1:</strong> Milk collected from farmers.</li>
+          <li><strong>Step 2:</strong> Chilling to retain freshness.</li>
+          <li><strong>Step 3:</strong> Quality checks (ISO 22000:2018).</li>
+          <li><strong>Step 4:</strong> Processing & packaging (FSSC 22000).</li>
+          <li><strong>Step 5:</strong> Delivered in cold transport.</li>
+        </ul>
+      </div>
+      <div class="process-video">
+        <video controls>
+          <source src="{{ url_for('static', filename='videos/process.webm') }}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="fade-section">
+    <h2>What Our Customers Say</h2>
+    <div class="products-grid">
+      {% for person in ['testimonial1.jpg', 'testimonial2.jpg'] %}
+      <div class="product-card">
+        <img src="{{ url_for('static', filename='images/' + person) }}" alt="Customer">
+        <h3>{{ 'Ramesh K.' if loop.index == 1 else 'Geeta M.' }}</h3>
+        <p>"The milk is always fresh and high quality!"</p>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="fade-section">
+    <h2>Gallery</h2>
+    <div class="products-grid">
+      <div class="product-card">
+        <img src="{{ url_for('static', filename='images/gallery1.jpeg') }}" alt="Gallery 1">
+      </div>
+      <div class="product-card">
+        <img src="{{ url_for('static', filename='images/gallery2.jpg') }}" alt="Gallery 2">
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="fade-section">
+    <h2>About Us</h2>
+    <p>Established in 2017, Vallhabha Milk Products is committed to quality and purity, certified with ISO 22000:2018 and FSSC 22000.</p>
+  </section>
+
+  <!-- Quality Section -->
+  <section id="quality" class="fade-section">
+    <h2>Quality & Certifications</h2>
+    <p>We maintain hygiene and quality in every step, certified by ISO 22000:2018 and FSSC 22000.</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="fade-section">
+    <h2>Contact Us</h2>
+    <p>Email: vallhabhamilk@gmail.com</p>
+    <p>Phone: 9100025333</p>
+    <p>Address: NO:12-13, 27/A, 60 Feet Rd, Prakash Nagar, Narasaraopeta, Andhra Pradesh 522601</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Vallhabha Milk Products Pvt. Ltd.</p>
+  </footer>
+
+  <!-- Slider Script -->
+  <script>
+    let index = 0;
+    const slides = document.querySelectorAll('.slide');
+    const total = slides.length;
+
+    function showSlide(i) {
+      const slider = document.getElementById('slider');
+      slider.style.transform = `translateX(-${i * 100}%)`;
+    }
+
+    function nextSlide() {
+      index = (index + 1) % total;
+      showSlide(index);
+    }
+
+    function prevSlide() {
+      index = (index - 1 + total) % total;
+      showSlide(index);
+    }
+
+    setInterval(nextSlide, 3000);
+    window.onload = () => showSlide(index);
+
+    // Fade-in animation observer
+    const faders = document.querySelectorAll('.fade-section');
+    const appearOnScroll = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        } else {
+          entry.target.classList.remove('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    faders.forEach(section => {
+      appearOnScroll.observe(section);
+    });
+  </script>
+</body>
+</html>

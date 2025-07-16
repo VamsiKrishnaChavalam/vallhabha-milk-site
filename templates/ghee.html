@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ghee Products - Vallhabha Milk</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/milk.css') }}">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="header-nav">
+      <a href="{{ url_for('home') }}">
+        <img src="{{ url_for('static', filename='images/logo.jpg') }}" class="logo" alt="Logo">
+      </a>
+      <ul class="nav-links">
+        <li><a href="{{ url_for('home') }}#home">Home</a></li>
+        <li><a href="{{ url_for('home') }}#products">Products</a></li>
+        <li><a href="{{ url_for('home') }}#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Milk Product Types Section -->
+  <section class="milk-types">
+    <h2>Types of Ghee We Offer</h2>
+    <div class="milk-grid">
+      <div class="milk-card">
+        <img src="{{ url_for('static', filename='images/toned_milk.jpg') }}" alt="Toned Milk">
+        <h3>Toned Milk</h3>
+        <p>Low fat milk, ideal for daily consumption and cooking.</p>
+      </div>
+      <div class="milk-card">
+        <img src="{{ url_for('static', filename='images/full_cream_milk.jpg') }}" alt="Full Cream Milk">
+        <h3>Full Cream Milk</h3>
+        <p>Rich and creamy, perfect for sweets and desserts.</p>
+      </div>
+      <div class="milk-card">
+        <img src="{{ url_for('static', filename='images/double_toned_milk.jpg') }}" alt="Double Toned Milk">
+        <h3>Double Toned Milk</h3>
+        <p>Health-friendly milk with reduced fat content.</p>
+      </div>
+      <div class="milk-card">
+        <img src="{{ url_for('static', filename='images/cow_milk.jpg') }}" alt="Cow Milk">
+        <h3>Cow Milk</h3>
+        <p>Fresh cow milk rich in nutrients and easy to digest.</p>
+      </div>
+      <div class="milk-card">
+        <img src="{{ url_for('static', filename='images/flavored_milk.jpg') }}" alt="Flavored Milk">
+        <h3>Flavored Milk</h3>
+        <p>Delicious milk in multiple natural flavors for kids & adults.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Vallhabha Milk Products Pvt. Ltd.</p>
+  </footer>
+</body>
+</html>

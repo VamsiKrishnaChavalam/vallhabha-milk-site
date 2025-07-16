@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: vallhabha-milk-site
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn app:app
+    plan: free
