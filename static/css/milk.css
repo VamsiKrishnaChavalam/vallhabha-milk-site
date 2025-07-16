@@ -18,7 +18,7 @@ body {
   background-attachment: fixed;
 }
 
-/* Header (Same as index) */
+/* Header */
 header {
   background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -32,6 +32,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -41,16 +42,17 @@ header {
 .nav-links {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
 .nav-links li a {
   text-decoration: none;
-  color: black;
   font-weight: 600;
+  color: #000;
 }
 
-/* Milk Section */
+/* Milk Products Section */
 .milk-types {
   text-align: center;
   padding: 60px 20px;
@@ -107,44 +109,34 @@ footer {
   text-align: center;
   padding: 20px;
 }
-/* Responsive for tablets */
-@media (max-width: 1024px) {
-  .milk-card {
-    width: 45%;
-  }
-}
 
-/* Responsive for mobile */
+/* Responsive Header for Mobile */
 @media (max-width: 768px) {
   .header-nav {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
 
   .nav-links {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 10px;
+    justify-content: flex-end;
     margin-top: 10px;
-  }
-
-  .milk-card {
-    width: 90%;
-  }
-
-  .milk-types {
-    padding: 40px 10px;
-  }
-
-  .milk-card h3 {
-    font-size: 1.1rem;
-  }
-
-  .milk-card p {
-    font-size: 0.9rem;
   }
 
   .logo {
     height: 40px;
+  }
+
+  .nav-links li a {
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .milk-card {
+    width: 90%;
   }
 }
