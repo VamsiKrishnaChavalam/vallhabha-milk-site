@@ -18,13 +18,13 @@ body {
   background-attachment: fixed;
 }
 
-/* Ensure all text and links are black */
+/* Text and Links */
 h1, h2, h3, h4, h5, h6,
 p, ul, li, a, span, label, input, textarea, button {
   color: #000 !important;
 }
 
-/* Header (Locked) */
+/* Header */
 header {
   background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -48,6 +48,7 @@ header {
   list-style: none;
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .nav-links li a {
@@ -56,7 +57,7 @@ header {
   color: #000 !important;
 }
 
-/* Hero Section with Slider (Locked) */
+/* Hero Section */
 .hero {
   width: 100%;
   height: 100vh;
@@ -103,7 +104,7 @@ header {
   display: block;
 }
 
-/* Slider navigation buttons */
+/* Slider navigation */
 .nav {
   position: absolute;
   top: 50%;
@@ -136,7 +137,7 @@ section {
   padding: 60px 20px;
 }
 
-/* Products Section (Locked) */
+/* Products */
 .products-grid {
   display: flex;
   flex-wrap: wrap;
@@ -171,6 +172,11 @@ section {
   font-size: 1.2rem;
 }
 
+.product-card a {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* Contact Form */
 .contact-form input,
 .contact-form textarea {
@@ -203,7 +209,7 @@ footer {
   padding: 20px;
 }
 
-/* ✅ Updated Process Section */
+/* Process Section */
 .process-section {
   padding: 50px 40px;
   text-align: center;
@@ -253,13 +259,7 @@ footer {
   display: block;
 }
 
-/* Remove underlines from product links */
-.product-card a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* Scroll-triggered fade-in and fade-out */
+/* Fade on Scroll */
 .fade-section {
   opacity: 0;
   transform: translateY(30px);
@@ -270,57 +270,21 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
-/* Responsive styles for tablets and smaller */
-@media (max-width: 1024px) {
-  .nav-links {
-    gap: 15px;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-  }
 
-  .hero {
-    height: auto;
-    padding: 20px;
-  }
-
-  .slider-container {
-    height: 300px;
-  }
-
-  .slider, .slide {
-    height: 100%;
-  }
-
-  .product-card, .milk-card {
-    width: 45%;
-  }
-
-  .process-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .process-text {
-    text-align: center;
-    padding: 0;
-  }
-
-  .process-video {
-    max-width: 100%;
-  }
-}
-
-/* Responsive styles for mobile devices */
+/* Responsive Header for Mobile */
 @media (max-width: 768px) {
   .header-nav {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
 
   .nav-links {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 10px;
+    justify-content: flex-end;
     margin-top: 10px;
   }
 
@@ -328,33 +292,12 @@ footer {
     height: 40px;
   }
 
-  .hero {
-    padding: 10px;
-  }
-
-  .slider-container {
-    border-radius: 20px;
-    height: 250px;
+  .nav-links li a {
+    font-size: 14px;
+    white-space: nowrap;
   }
 
   .product-card {
     width: 90%;
-  }
-
-  .contact-form input,
-  .contact-form textarea {
-    width: 100%;
-  }
-
-  section {
-    padding: 40px 10px;
-  }
-
-  .process-container {
-    flex-direction: column;
-  }
-
-  .process-text {
-    padding: 0;
   }
 }
