@@ -271,33 +271,68 @@ footer {
   transform: translateY(0);
 }
 
-/* Responsive Header for Mobile */
+/* ✅ Responsive Layout: Mobile Styles */
 @media (max-width: 768px) {
   .header-nav {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-
-  .nav-links {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: flex-end;
-    margin-top: 10px;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .logo {
-    height: 40px;
+    height: 45px;
+    margin-bottom: 10px;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .nav-links li {
+    width: 23%;
+    text-align: center;
   }
 
   .nav-links li a {
     font-size: 14px;
+    display: inline-block;
     white-space: nowrap;
+  }
+
+  .hero {
+    height: auto;
+    padding: 20px 10px;
+  }
+
+  .slider-container {
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 20px;
+  }
+
+  .slide img {
+    border-radius: 20px;
+  }
+
+  .nav {
+    font-size: 22px;
+    padding: 8px 10px;
   }
 
   .product-card {
     width: 90%;
+  }
+
+  .process-container {
+    flex-direction: column;
+  }
+
+  .process-text, .process-video {
+    width: 100%;
+    padding: 0;
   }
 }
